@@ -1,0 +1,60 @@
+{
+  "name": "noidisbo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A local-first Markdown notes app with wikilinks, backlinks and a graph view",
+  "main": "./out/main/index.js",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "start": "electron-vite preview",
+    "typecheck": "tsc --noEmit",
+    "dist": "electron-vite build && electron-builder --mac"
+  },
+  "dependencies": {
+    "chokidar": "^3.6.0"
+  },
+  "devDependencies": {
+    "@codemirror/autocomplete": "^6.18.0",
+    "@codemirror/commands": "^6.6.0",
+    "@codemirror/lang-markdown": "^6.2.5",
+    "@codemirror/language": "^6.10.2",
+    "@codemirror/search": "^6.5.6",
+    "@codemirror/state": "^6.4.1",
+    "@codemirror/view": "^6.33.0",
+    "@lezer/highlight": "^1.2.1",
+    "@types/markdown-it": "^14.1.2",
+    "@types/node": "^20.14.0",
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "electron": "^33.2.0",
+    "electron-builder": "^26.18.0",
+    "electron-vite": "^2.3.0",
+    "markdown-it": "^14.1.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.2"
+  },
+  "build": {
+    "appId": "local.noidisbo.app",
+    "productName": "Noidisbo",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "out/**/*",
+      "package.json"
+    ],
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": [
+        "dmg"
+      ],
+      "identity": "-",
+      "icon": "build/icon.png",
+      "hardenedRuntime": false
+    }
+  }
+}
